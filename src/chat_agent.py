@@ -1,3 +1,21 @@
+# DeepSeek Chat Application
+# Version: 1.0.0
+
+"""
+Changelog:
+- v1.0.0 (2024-02-02):
+  * Initial release
+  * Added model switching with confirmation
+  * Added chat history clearing with confirmation
+  * Implemented context length and temperature settings
+  * Supported streaming responses from Ollama models
+
+Future Roadmap:
+- Add export/import chat history feature
+- Implement persistent storage for chat sessions
+- Add more advanced model configuration options
+"""
+
 import streamlit as st
 import requests
 import json
@@ -8,9 +26,13 @@ from datetime import datetime
 OLLAMA_HOST = "http://localhost:11434"
 DEFAULT_MODEL = "deepseek-r1:14b"
 
+# Application Version
+APP_VERSION = "1.0.0"
+APP_NAME = "DeepSeek Chat"
+
 # Page setup
 st.set_page_config(
-    page_title="DeepSeek Chat",
+    page_title=f"{APP_NAME} v{APP_VERSION}",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -229,6 +251,28 @@ def main():
             help="Number of tokens to use for context"
         )
         
+        # Version information toggle
+        st.sidebar.markdown("### App Information")
+        version_expander = st.sidebar.expander(f"{APP_NAME} v{APP_VERSION}")
+        with version_expander:
+            st.markdown(f"**Version:** {APP_VERSION}")
+            st.markdown("**Changelog:**")
+            st.markdown("""
+- v1.0.0:
+  * Initial release
+  * Model switching with confirmation
+  * Chat history clearing with confirmation
+  * Context length and temperature settings
+  * Streaming responses from Ollama models
+            """)
+            
+            st.markdown("**Roadmap:**")
+            st.markdown("""
+- Export/import chat history
+- Persistent storage for chat sessions
+- Advanced model configuration options
+            """)
+        
         # Chat context information
         if st.session_state.messages:
             st.markdown("### Chat Context")
@@ -240,7 +284,7 @@ def main():
             SessionState.request_clear_chat()
     
     # Main chat interface
-    st.title("DeepSeek Chat 🤖")
+    st.title(f"{APP_NAME} 🤖")
     st.caption("Powered by Ollama")
     
     # Display chat history
