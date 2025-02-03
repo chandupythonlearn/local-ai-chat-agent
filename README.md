@@ -1,19 +1,27 @@
-# AI Chat Agent 🤖
+# AI Chat Agent 🤖 - Powered by Ollama
 
 ![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![Streamlit Version](https://img.shields.io/badge/streamlit-1.24+-red.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-blueviolet.svg)
 
-A streamlit-based chat interface for Ollama models featuring multiple model support, syntax highlighting, and contextual memory.
+## 🚀 Discover Conversational AI at Your Fingertips
 
-## 🌟 Features
+Transform your local machine into an intelligent conversational powerhouse with our cutting-edge AI Chat Agent! Harness the power of Ollama models right from your desktop.
 
-- 🤖 Support for multiple Ollama models
-- 💡 Intelligent context memory
-- 🎨 Syntax highlighting for code blocks
-- 📋 Code copy functionality
-- 🔄 Model switching with session management
-- 🌡️ Temperature and context length control
+## 🌟 What's New in v1.0.0
+
+### Major Features
+- 🤖 Multi-model support
+- 💡 Intelligent context management
+- 🎨 Advanced code block handling
+- 🔄 Seamless model switching
+
+### Version Highlights
+- Initial release of the AI Chat Agent
+- Robust Ollama model integration
+- Intuitive user interface
+- Flexible conversation controls
 
 ## 📋 Prerequisites
 
@@ -81,6 +89,20 @@ Before you begin, ensure you have:
    - Select your preferred model from the sidebar
    - Start chatting!
 
+## 🌠 Version Roadmap
+
+### Upcoming in v1.1.0
+- [ ] Export/import chat history
+- [ ] Enhanced model performance metrics
+- [ ] Additional UI customization options
+- [ ] Persistent chat session storage
+
+### Future Vision (v1.2.0+)
+- Advanced prompt engineering tools
+- Multi-language support
+- Integration with local knowledge bases
+- Advanced analytics dashboard
+
 ## 🛠️ Features Guide
 
 ### Model Selection
@@ -102,6 +124,20 @@ Before you begin, ensure you have:
 - Maintains conversation history
 - Remembers previous interactions
 - Clear context with "Clear Chat History" button
+
+## 📊 Version History
+
+### v1.0.0 (2024-02-02)
+- 🎉 Initial public release
+- Implemented core chat functionality
+- Added model switching mechanism
+- Integrated context and temperature controls
+- Developed robust error handling
+
+### Planned Versions
+- **v1.1.0**: Enhanced user experience
+- **v1.2.0**: Advanced AI capabilities
+- **v1.3.0**: Enterprise-grade features
 
 ## ⚙️ Configuration
 
