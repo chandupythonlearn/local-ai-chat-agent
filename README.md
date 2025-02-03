@@ -1,14 +1,10 @@
 # AI Chat Agent 🤖
 
-A streamlit-based chat interface for Ollama models with support for multiple models, syntax highlighting, and context memory.
-
 ![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![Streamlit Version](https://img.shields.io/badge/streamlit-1.24+-red.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-<div align="center">
-  <img src="docs/images/chat-interface.png" alt="Chat Interface" width="600"/>
-</div>
+A streamlit-based chat interface for Ollama models featuring multiple model support, syntax highlighting, and contextual memory.
 
 ## 🌟 Features
 
@@ -19,88 +15,156 @@ A streamlit-based chat interface for Ollama models with support for multiple mod
 - 🔄 Model switching with session management
 - 🌡️ Temperature and context length control
 
-## 🚀 Quick Start
+## 📋 Prerequisites
 
-1. **Prerequisites**
-   - Python 3.8+
-   - Ollama installed and running
-   - Git
+Before you begin, ensure you have:
+- Python 3.8 or higher installed
+- Ollama installed and running ([Ollama Installation Guide](https://github.com/ollama/ollama))
+- Git (optional, for cloning)
 
-2. **Installation**
+## 🚀 Installation
+
+1. **Get the Code**
    ```bash
-   # Clone the repository
-   git clone https://github.com/yourusername/ai-chat-agent.git
-   cd ai-chat-agent
+   # Option 1: Clone with git
+   git clone https://github.com/yourusername/local-ai-chat-agent.git
+   cd local-ai-chat-agent
 
+   # Option 2: Download ZIP
+   # Download and extract the ZIP file
+   cd local-ai-chat-agent
+   ```
+
+2. **Set Up Virtual Environment**
+   ```bash
    # Create virtual environment
    python -m venv venv
-   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 
-   # Install dependencies
+   # Activate virtual environment
+   # On Windows:
+   .\venv\Scripts\activate
+   # On macOS/Linux:
+   source venv/bin/activate
+   ```
+
+3. **Install Dependencies**
+   ```bash
    pip install -r requirements.txt
    ```
 
-3. **Start the Application**
+4. **Install Required Models**
+   ```bash
+   # Make sure Ollama is running
+   ollama serve
+
+   # In another terminal, pull models
+   ollama pull deepseek-r1:14b
+   # Optional: Pull additional models
+   ollama pull llama2
+   ollama pull mistral
+   ```
+
+## 💻 Usage
+
+1. **Start Ollama Server** (if not already running)
+   ```bash
+   ollama serve
+   ```
+
+2. **Launch the Chat Interface**
    ```bash
    streamlit run src/chat_agent.py
    ```
 
-## 📖 Documentation
+3. **Access the Interface**
+   - Open your browser to `http://localhost:8501`
+   - Select your preferred model from the sidebar
+   - Start chatting!
 
-- [Installation Guide](docs/installation.md)
-- [User Guide](docs/user_guide.md)
-- [Configuration Guide](docs/configuration.md)
-- [Development Guide](docs/development.md)
+## 🛠️ Features Guide
 
-## 🔧 Configuration
+### Model Selection
+- Choose models from the dropdown in sidebar
+- Switching models requires confirmation
+- Each chat session maintains its own context
 
-Basic configuration can be modified in `src/config.py`:
-```python
-OLLAMA_HOST = "http://localhost:11434"
-DEFAULT_MODEL = "deepseek-r1:14b"
-```
+### Temperature Control
+- Adjust from 0.0 to 1.0
+- Lower values (0.1-0.3): More focused, deterministic responses
+- Higher values (0.7-1.0): More creative, varied responses
 
-See [configuration guide](docs/configuration.md) for more details.
+### Code Block Features
+- Automatic syntax highlighting
+- Copy button for easy code copying
+- Support for multiple programming languages
 
-## 🛠️ Development Setup
+### Context Memory
+- Maintains conversation history
+- Remembers previous interactions
+- Clear context with "Clear Chat History" button
 
-1. Create development environment:
+## ⚙️ Configuration
+
+Default settings can be modified at runtime through the UI:
+- Model selection
+- Temperature
+- Context length
+
+## 🔍 Troubleshooting
+
+### Common Issues
+
+1. **"Ollama Not Connected" Error**
    ```bash
-   python -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
+   # Check if Ollama is running
+   ollama list
+   # Start if needed
+   ollama serve
    ```
 
-2. Install development dependencies:
+2. **"Model Not Found" Error**
    ```bash
-   pip install -r requirements-dev.txt
+   # Pull the required model
+   ollama pull model-name
    ```
 
-3. Run tests:
-   ```bash
-   pytest tests/
-   ```
+3. **Memory Issues**
+   - Reduce context length in sidebar
+   - Clear chat history
+   - Restart application
 
-## 🤝 Contributing
+## 📖 Tips for Best Results
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. **Model Selection**
+   - Use smaller models for quick responses
+   - Use larger models for complex tasks
+   - Match model to task requirements
 
-## 📜 License
+2. **Temperature Settings**
+   - Use 0.1-0.3 for precise, factual responses
+   - Use 0.4-0.6 for balanced responses
+   - Use 0.7-1.0 for creative tasks
+
+3. **Context Management**
+   - Clear chat history for new topics
+   - Adjust context length as needed
+   - Monitor memory usage
+
+## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## 🤝 Contributing
 
-- Ollama team for their amazing model serving framework
-- Streamlit team for the fantastic web framework
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Support
 
-If you have any questions or run into issues, please:
-1. Check the [documentation](docs/)
-2. Look through [existing issues](https://github.com/yourusername/ai-chat-agent/issues)
-3. Create a new issue if needed
+If you encounter any issues or have questions:
+1. Check the troubleshooting guide above
+2. Create an issue in the GitHub repository
+3. Provide detailed information about your problem
+
+---
+
+Made with ❤️ by [Chandra]

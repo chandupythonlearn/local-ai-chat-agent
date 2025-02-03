@@ -1,5 +1,10 @@
 # requirements.txt
 streamlit>=1.24.0
 requests>=2.31.0
-python-markdown>=3.4.3
+#python-markdown
 pygments>=2.15.1
+
+# requirements-dev.txt
+pytest>=7.4.0
+black>=23.3.0
+flake8>=6.0.0
